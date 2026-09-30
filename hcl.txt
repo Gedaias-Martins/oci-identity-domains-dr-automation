@@ -1,0 +1,17 @@
+provider "oci" {
+  tenancy_ocid = var.tenancy_ocid
+  region       = var.region
+}
+
+# Criação do Domínio de Identidade Customizado (AA-Demo)
+resource "oci_identity_domain" "aa_demo_domain" {
+  # Vincula o domínio ao compartimento raiz (Tenancy) para fins de governança global
+  compartment_id = var.tenancy_ocid
+  
+  display_name   = var.domain_display_name
+  description    = var.domain_description
+  license_type   = var.domain_license_type
+  
+  # Ativa o domínio imediatamente após o provisionamento
+  is_hidden_on_login = false
+}

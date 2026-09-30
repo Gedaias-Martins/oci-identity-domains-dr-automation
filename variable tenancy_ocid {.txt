@@ -1,0 +1,26 @@
+variable "tenancy_ocid" {
+  type        = string
+  description = "OCID da sua Tenancy principal na Oracle Cloud"
+}
+
+variable "region" {
+  type        = string
+  default     = "us-ashburn-1" # Região Primária
+  description = "Região principal onde o domínio de identidade será criado"
+}
+
+variable "domain_display_name" {
+  type    = string
+  default = "AA-Demo"
+}
+
+variable "domain_description" {
+  type    = string
+  default = "Domínio de demonstração para o Curso AA"
+}
+
+variable "domain_license_type" {
+  type        = string
+  default     = "premium" # Equivalente ao oracle-apps-premium selecionado no painel
+  description = "Tipo de licença do domínio de identidade OCI"
+}

@@ -1,0 +1,9 @@
+output "identity_domain_id" {
+  value       = oci_identity_domain.aa_demo_domain.id
+  description = "O OCID do domínio de identidade AA-Demo criado"
+}
+
+output "identity_domain_url" {
+  value       = oci_identity_domain.aa_demo_domain.url
+  description = "A URL de login / API do domínio de identidade"
+}
